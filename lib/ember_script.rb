@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+require 'tilt'
+
 module EmberScript
 
   class << self
@@ -28,7 +30,7 @@ module EmberScript
     end
   end
 
-  class EmberScriptTemplate < Tilt::Template
+  class EmberScriptTemplate < ::Tilt::Template
     self.default_mime_type = 'application/javascript'
 
     def self.engine_initialized?
@@ -47,6 +49,6 @@ module EmberScript
     end
   end
 
-  Tilt.register EmberScriptTemplate, 'em'
+  ::Tilt.register EmberScriptTemplate, 'em'
 
 end

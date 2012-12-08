@@ -1,6 +1,5 @@
 source "http://rubygems.org"
 
-gem 'activesupport'
 gem 'tilt'
 
 group :development do
