@@ -1,12 +1,8 @@
-# ember-script-ruby
+# EmberScript-Ruby
 
 Provides a lightweight ruby wrapper around [EmberScript](https://github.com/ghempton/ember-script).
 
 `EmberScript.compile(source)`
-
-## Rails Integration
-
-Should work out of the box with Sprockets or Tilt. EmberScript files should use the '.em' extension.
 
 ## Installation
 
@@ -15,10 +11,26 @@ This gem requires that an `ember-script` command be available in the current pat
 ```
 git clone git@github.com:ghempton/ember-script.git
 cd ember-script
-sudo npm install -g
+npm install
+make
+sudo npm install -g .
 ```
 
-## Contributing to ember-script-ruby
+## Rails Integration
+
+After following the installation instructions above, simply add the following to your gemfile:
+
+```
+gem 'ember_script-rails'
+```
+
+## Plain Ruby
+
+```
+gem 'ember_script'
+```
+
+## Contributing to EmberScript-Ruby
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
