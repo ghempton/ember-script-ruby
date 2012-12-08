@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
+    "ember-script.gemspec",
     "lib/ember_script.rb",
     "spec/ember_script_spec.rb",
     "spec/spec_helper.rb"
