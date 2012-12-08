@@ -4,7 +4,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "ember-script-ruby"
+  s.name = "ember-script"
   s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
-    "ember-script-ruby.gemspec",
     "lib/ember_script.rb",
     "spec/ember_script_spec.rb",
     "spec/spec_helper.rb"
