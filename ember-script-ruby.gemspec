@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Gordon L. Hempton"]
   s.date = "2012-12-08"
-  s.description = "TODO: longer description of your gem"
+  s.description = "Provides a ruby interface to EmberScript"
   s.email = "ghempton@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
+    "ember-script-ruby.gemspec",
     "lib/ember_script.rb",
     "spec/ember_script_spec.rb",
     "spec/spec_helper.rb"
@@ -32,7 +33,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.23"
-  s.summary = "TODO: one-line summary of your gem"
+  s.summary = "EmberScript ruby wrapper"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
