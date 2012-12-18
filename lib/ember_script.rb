@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'tilt'
+require 'open3'
 
 module EmberScript
 
