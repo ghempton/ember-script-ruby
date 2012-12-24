@@ -27,12 +27,30 @@ module EmberScript
     def compile(script, options = {})
       script = script.read if script.respond_to?(:read)
 
-      Open3.capture3("ember-script --js", :stdin_data=>script)[0]
+      if options.key?(:bare)
+      elsif options.key?(:no_wrap)
+        options[:bare] = options[:no_wrap]
+      else
+        options[:bare] = false
+      end
+      bare = options[:bare] ? "--bare" : ""
+
+      Open3.capture3("ember-script --js #{bare}", :stdin_data=>script)[0]
     end
   end
 
   class EmberScriptTemplate < ::Tilt::Template
     self.default_mime_type = 'application/javascript'
+
+    @@default_bare = false
+
+    def self.default_bare
+      @@default_bare
+    end
+
+    def self.default_bare=(value)
+      @@default_bare = value
+    end
 
     def self.engine_initialized?
       true
@@ -47,6 +65,9 @@ module EmberScript
     end
 
     def prepare
+      if !options.key?(:bare) and !options.key?(:no_wrap)
+        options[:bare] = self.class.default_bare
+      end
     end
   end
 
