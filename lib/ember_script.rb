@@ -3,6 +3,8 @@
 require 'tilt'
 require 'open3'
 
+require 'ember_script/version'
+
 module EmberScript
 
   class << self
