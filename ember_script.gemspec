@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+require 'date'
 require File.expand_path("../lib/ember_script/version", __FILE__)
 
 Gem::Specification.new do |gem|
