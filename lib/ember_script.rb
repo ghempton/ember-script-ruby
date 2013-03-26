@@ -1,24 +1,33 @@
 # encoding: utf-8
 
+require 'execjs'
 require 'tilt'
-require 'open3'
 
+require 'ember_script/source'
 require 'ember_script/version'
 
 module EmberScript
 
+  module Source
+    def self.path
+      @path ||= ENV['EMBERSCRIPT_SOURCE_PATH'] || bundled_path
+    end
+
+    def self.contents
+      @contents ||= File.read(path)
+    end
+
+    def self.version
+      Source.context.eval("EmberScript.VERSION")
+    end
+
+    def self.context
+      @context ||= ExecJS.compile(contents)
+    end
+  end
+
   class << self
-    def engine
-    end
-
-    def engine=(engine)
-    end
-
-    def version
-      `ember-script -v`
-    end
-
-    # Compile a EmberScript file to JavaScript
+    # Compile an EmberScript file to JavaScript
     # or generate the source maps.
     #
     # @param [String,#read] the source string or IO
@@ -37,7 +46,7 @@ module EmberScript
       end
       bare = options[:bare] ? "--bare" : ""
 
-      Open3.capture3("ember-script --js #{bare}", :stdin_data=>script)[0]
+      Source.context.call("EmberScript.em2js", script, options)
     end
   end
 

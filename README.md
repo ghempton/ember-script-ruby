@@ -6,24 +6,8 @@ Provides a lightweight ruby wrapper around [EmberScript](https://github.com/ghem
 
 ## Installation
 
-This gem requires that an `ember-script` command be available in the current path. Being as EmberScript is still in early development, it is best to install via npm from git. After installing [Node.js](http://nodejs.org/), run the following command:
-
 ```
-sudo npm install -g 'git://github.com/ghempton/ember-script.git#HEAD'
-```
-
-## Rails Integration
-
-After following the installation instructions above, simply add the following to your gemfile:
-
-```
-gem 'ember_script-rails'
-```
-
-## Plain Ruby
-
-```
-gem 'ember_script'
+gem install ember_script
 ```
 
 ## Contributing to EmberScript-Ruby

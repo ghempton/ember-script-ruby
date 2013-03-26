@@ -20,6 +20,10 @@ eos
     result.should =~ /property/
   end
 
+  it 'should output version' do
+    EmberScript::Source.version.should_not be_empty
+  end
+
   describe EmberScript::EmberScriptTemplate do
 
     # Ensure default_bare has its default value.

@@ -17,6 +17,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency "tilt"
+  gem.add_dependency "execjs"
+  gem.add_dependency "ember_script-source", ">= 0.0.2"
 
   gem.add_development_dependency "rspec"
 end
