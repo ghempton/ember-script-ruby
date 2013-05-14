@@ -46,7 +46,7 @@ module EmberScript
       end
       bare = options[:bare] ? "--bare" : ""
 
-      Source.context.call("EmberScript.em2js", script, options)
+      Source.context.call("function() { return EmberScript.em2js.apply(EmberScript, arguments); }", script, options)
     end
   end
 
